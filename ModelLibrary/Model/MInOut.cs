@@ -2085,7 +2085,7 @@ namespace VAdvantage.Model
                 sql.Clear();
                 sql.Append(@"SELECT LTRIM(SYS_CONNECT_BY_PATH( NotMatched, ' , '),',') NotMatched FROM
                       (SELECT NotMatched, ROW_NUMBER () OVER (ORDER BY NotMatched ) RN, COUNT (*) OVER () CNT  FROM
-                        (SELECT UNIQUE 
+                        (SELECT DISTINCT 
                         CASE  WHEN p.m_warehouse_id <> i.m_warehouse_id  THEN pr.Name || '_' || il.line
                               WHEN p.m_locator_id <> il.m_locator_id THEN pr.Name || '_' || il.line  END AS NotMatched
                         FROM m_inout i INNER JOIN m_inoutline il ON i.m_inout_id = il.m_inout_id

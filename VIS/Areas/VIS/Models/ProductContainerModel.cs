@@ -655,7 +655,7 @@ namespace VIS.Models
                             START WITH ref_m_container_id IS NULL CONNECT BY prior m_productcontainer_id = ref_m_container_id
                            ORDER BY tree ", null, trx));
 
-            DataSet dsTragetContainer = DB.ExecuteDataset(@"SELECT UNIQUE targetcontainer_id FROM M_MovementLine 
+            DataSet dsTragetContainer = DB.ExecuteDataset(@"SELECT DISTINCT targetcontainer_id FROM M_MovementLine 
                                         WHERE MoveFullContainer='Y' AND IsActive = 'Y' AND M_Movement_ID = " + movementId, null, trx);
             if (dsTragetContainer != null && dsTragetContainer.Tables.Count > 0 && dsTragetContainer.Tables[0].Rows.Count > 0)
             {

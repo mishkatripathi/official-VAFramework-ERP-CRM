@@ -183,7 +183,7 @@ namespace VAdvantage.DBPort
                     }
                 }
 
-                String subselect = select.Substring(s_start, s_end);
+                String subselect = select.Substring(s_start, s_end - s_start);
 
                 if (subselect.IndexOf("AND ROWNUM=1") > 1)
                 {
