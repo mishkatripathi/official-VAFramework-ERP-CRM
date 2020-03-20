@@ -303,7 +303,7 @@ namespace VIS.Models
                     }
                     else
                     {
-                        sql += "  ) ";
+                        sql += "  ) t";
                     }
 
                     info.count = Util.GetValueOfInt(DB.ExecuteScalar(sql));

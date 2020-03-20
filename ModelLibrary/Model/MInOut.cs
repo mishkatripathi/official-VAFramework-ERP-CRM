@@ -1939,7 +1939,7 @@ namespace VAdvantage.Model
                                 }
                                 else
                                 {
-                                    sql.Append(@"SELECT SUM(t.ContainerCurrentQty) keep (dense_rank last ORDER BY t.MovementDate, t.M_Transaction_ID) AS CurrentQty FROM m_transaction t 
+                                    sql.Append(@"SELECT DISTINCT First_VALUE(t.ContainerCurrentQty) OVER (PARTITION BY t.M_Product_ID, t.M_AttributeSetInstance_ID ORDER BY t.MovementDate DESC, t.M_Transaction_ID DESC) AS CurrentQty FROM m_transaction t 
                                         INNER JOIN M_Locator l ON t.M_Locator_ID = l.M_Locator_ID WHERE t.MovementDate <= " + GlobalVariable.TO_DATE(GetMovementDate(), true) +
                                             " AND t.AD_Client_ID = " + GetAD_Client_ID() + " AND t.M_Locator_ID = " + iol.GetM_Locator_ID() +
                                             " AND t.M_Product_ID = " + iol.GetM_Product_ID() + " AND NVL(t.M_AttributeSetInstance_ID,0) = " + iol.GetM_AttributeSetInstance_ID() +
@@ -1964,7 +1964,7 @@ namespace VAdvantage.Model
                                 }
                                 else
                                 {
-                                    sql.Append(@"SELECT SUM(t.ContainerCurrentQty) keep (dense_rank last ORDER BY t.MovementDate, t.M_Transaction_ID) AS CurrentQty FROM m_transaction t 
+                                    sql.Append(@"SELECT DISTINCT First_VALUE(t.ContainerCurrentQty) OVER (PARTITION BY t.M_Product_ID, t.M_AttributeSetInstance_ID ORDER BY t.MovementDate DESC, t.M_Transaction_ID DESC) AS CurrentQty FROM m_transaction t 
                                         INNER JOIN M_Locator l ON t.M_Locator_ID = l.M_Locator_ID WHERE t.MovementDate <= " + GlobalVariable.TO_DATE(GetMovementDate(), true) +
                                             " AND t.AD_Client_ID = " + GetAD_Client_ID() + " AND t.M_Locator_ID = " + iol.GetM_Locator_ID() +
                                             " AND t.M_Product_ID = " + iol.GetM_Product_ID() + " AND NVL(t.M_AttributeSetInstance_ID,0) = " + iol.GetM_AttributeSetInstance_ID() +
@@ -2614,7 +2614,7 @@ namespace VAdvantage.Model
 
                             #region Update Transaction / Future Date entry
                             sql.Clear();
-                            sql.Append(@"SELECT SUM(t.CurrentQty) keep (dense_rank last ORDER BY t.MovementDate, t.M_Transaction_ID) AS CurrentQty FROM m_transaction t 
+                            sql.Append(@"SELECT DISTINCT First_VALUE(t.CurrentQty) OVER (PARTITION BY t.M_Product_ID, t.M_AttributeSetInstance_ID ORDER BY t.MovementDate DESC, t.M_Transaction_ID DESC) AS CurrentQty FROM m_transaction t 
                             INNER JOIN M_Locator l ON t.M_Locator_ID = l.M_Locator_ID WHERE t.MovementDate <= " + GlobalVariable.TO_DATE(GetMovementDate(), true) +
                                    " AND t.AD_Client_ID = " + GetAD_Client_ID() + " AND t.M_Locator_ID = " + sLine.GetM_Locator_ID() +
                                " AND t.M_Product_ID = " + sLine.GetM_Product_ID() + " AND NVL(t.M_AttributeSetInstance_ID,0) = " + sLine.GetM_AttributeSetInstance_ID());
@@ -2799,7 +2799,7 @@ namespace VAdvantage.Model
 
                         // Get Current Qty from Transaction
                         sql.Clear();
-                        sql.Append(@"SELECT SUM(t.CurrentQty) keep (dense_rank last ORDER BY t.MovementDate, t.M_Transaction_ID) AS CurrentQty FROM m_transaction t 
+                        sql.Append(@"SELECT DISTINCT FIRST_VALUE(t.CurrentQty) OVER (PARTITION BY t.M_Product_ID, t.M_AttributeSetInstance_ID ORDER BY t.MovementDate DESC, t.M_Transaction_ID DESC) AS CurrentQty FROM m_transaction t 
                             INNER JOIN M_Locator l ON t.M_Locator_ID = l.M_Locator_ID WHERE t.MovementDate <= " + GlobalVariable.TO_DATE(GetMovementDate(), true) +
                                " AND t.AD_Client_ID = " + GetAD_Client_ID() + " AND t.M_Locator_ID = " + sLine.GetM_Locator_ID() +
                            " AND t.M_Product_ID = " + sLine.GetM_Product_ID() + " AND NVL(t.M_AttributeSetInstance_ID,0) = " + sLine.GetM_AttributeSetInstance_ID());
@@ -4512,8 +4512,7 @@ namespace VAdvantage.Model
         private Decimal? GetContainerQtyFromTransaction(MInOutLine line, DateTime? movementDate)
         {
             Decimal result = 0;
-            string sql = @"SELECT SUM(t.ContainerCurrentQty) keep (dense_rank last
-                            ORDER BY t.MovementDate, t.M_Transaction_ID) AS ContainerCurrentQty
+            string sql = @"SELECT DISTINCT First_VALUE(t.ContainerCurrentQty) OVER (PARTITION BY t.M_Product_ID, t.M_AttributeSetInstance_ID ORDER BY t.MovementDate DESC, t.M_Transaction_ID DESC) AS ContainerCurrentQty
                            FROM M_Transaction t
                            WHERE t.MovementDate <=" + GlobalVariable.TO_DATE(movementDate, true) + @" 
                            AND t.AD_Client_ID                       = " + line.GetAD_Client_ID() + @"
