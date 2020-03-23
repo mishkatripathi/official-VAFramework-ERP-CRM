@@ -436,6 +436,140 @@ namespace VAdvantage.DBPort
                 }
             }
 
+            else if (retValue.IndexOf("AND ROWNUM<=") > 1)
+            {
+                int rownum = retValue.IndexOf("AND ROWNUM<=");
+                int indAnd = rownum + 12;
+                string rnumStr = retValue.Substring(indAnd);
+                if (rnumStr.Contains("AND"))
+                {
+                    indAnd = rnumStr.IndexOf("AND");
+                }
+                else
+                {
+                    indAnd = rnumStr.Length;
+                }
+
+                retValue = retValue.Substring(0, rownum) + rnumStr.Substring(indAnd);
+                return convert + retValue + " LIMIT " + rnumStr.Substring(0, indAnd);
+            }
+            else if (retValue.IndexOf("AND ROWNUM<") > 1)
+            {
+                int rownum = retValue.IndexOf("AND ROWNUM <");
+                int indAnd = rownum + 11;
+                string rnumStr = retValue.Substring(indAnd);
+                if (rnumStr.Contains("AND"))
+                {
+                    indAnd = rnumStr.IndexOf("AND");
+                }
+                else
+                {
+                    indAnd = rnumStr.Length;
+                }
+
+                retValue = retValue.Substring(0, rownum) + rnumStr.Substring(indAnd);
+                return convert + retValue + " LIMIT " + rnumStr.Substring(0, indAnd);
+            }
+            else if (retValue.IndexOf("AND ROWNUM <=") > 1)
+            {
+                int rownum = retValue.IndexOf("AND ROWNUM <");
+                int indAnd = rownum + 13;
+                string rnumStr = retValue.Substring(indAnd);
+                if (rnumStr.Contains("AND"))
+                {
+                    indAnd = rnumStr.IndexOf("AND");
+                }
+                else
+                {
+                    indAnd = rnumStr.Length;
+                }
+
+                retValue = retValue.Substring(0, rownum) + rnumStr.Substring(indAnd);
+                return convert + retValue + " LIMIT " + rnumStr.Substring(0, indAnd);
+            }
+            else if (retValue.IndexOf("AND ROWNUM <") > 1)
+            {
+                int rownum = retValue.IndexOf("AND ROWNUM <");
+                int indAnd = rownum + 12;
+                string rnumStr = retValue.Substring(indAnd);
+
+                if (rnumStr.Contains("AND"))
+                {
+                    indAnd = rnumStr.IndexOf("AND");
+                }
+                else
+                {
+                    indAnd = rnumStr.Length;
+                }
+
+                retValue = retValue.Substring(0, rownum) + rnumStr.Substring(indAnd);
+                return convert + retValue + " LIMIT " + rnumStr.Substring(0, indAnd);
+            }
+
+            else if (retValue.IndexOf("ROWNUM <=") > 1)
+            {
+                int rownum = retValue.IndexOf("ROWNUM <=");
+                int indAnd = rownum + 9;
+                string rnumStr = retValue.Substring(indAnd);
+                if (rnumStr.Contains("AND"))
+                {
+                    indAnd = rnumStr.IndexOf("AND");
+                }
+                else
+                {
+                    indAnd = rnumStr.Length;
+                }
+                retValue = retValue.Substring(0, rownum) + rnumStr.Substring(indAnd);
+                return convert + retValue + " LIMIT " + rnumStr.Substring(0, indAnd);
+            }
+            else if (retValue.IndexOf("ROWNUM <") > 1)
+            {
+                int rownum = retValue.IndexOf("ROWNUM <");
+                int indAnd = rownum + 8;
+                string rnumStr = retValue.Substring(indAnd);
+                if (rnumStr.Contains("AND"))
+                {
+                    indAnd = rnumStr.IndexOf("AND");
+                }
+                else
+                {
+                    indAnd = rnumStr.Length;
+                }
+                retValue = retValue.Substring(0, rownum) + rnumStr.Substring(indAnd);
+                return convert + retValue + " LIMIT " + rnumStr.Substring(0, indAnd);
+            }
+            else if (retValue.IndexOf("ROWNUM<=") > 1)
+            {
+                int rownum = retValue.IndexOf("ROWNUM<=");
+                int indAnd = rownum + 8; ;
+                string rnumStr = retValue.Substring(indAnd);
+                if (rnumStr.Contains("AND"))
+                {
+                    indAnd = rnumStr.IndexOf("AND");
+                }
+                else
+                {
+                    indAnd = rnumStr.Length;
+                }
+                retValue = retValue.Substring(0, rownum) + rnumStr.Substring(indAnd);
+                return convert + retValue + " LIMIT " + rnumStr.Substring(0, indAnd);
+            }
+            else if (retValue.IndexOf("ROWNUM<") > 1)
+            {
+                int rownum = retValue.IndexOf("ROWNUM<");
+                int indAnd = rownum + 7; ;
+                string rnumStr = retValue.Substring(indAnd);
+                if (rnumStr.Contains("AND"))
+                {
+                    indAnd = rnumStr.IndexOf("AND");
+                }
+                else
+                {
+                    indAnd = rnumStr.Length;
+                }
+                retValue = retValue.Substring(0, rownum) + rnumStr.Substring(indAnd);
+                return convert + retValue + " LIMIT " + rnumStr.Substring(0, indAnd);
+            }
             return convert + retValue;
 
         } // convertRowNum
@@ -491,15 +625,15 @@ namespace VAdvantage.DBPort
             String PATTERN_String = "\'([^']|(''))*\'";
             String PATTERN_DataType = "([\\w]+)(\\(\\d+\\))?";
             String pattern =
-                               "\\bCAST\\b[\\s]*\\([\\s]*"					// CAST<sp>(<sp>		
-                               + "((" + PATTERN_String + ")|([^\\s]+))"		//	arg1				1(2,3)
-                               + "[\\s]*AS[\\s]*"						//	<sp>AS<sp>
-                               + "(" + PATTERN_DataType + ")"				//	arg2 (datatype)		4
-                               + "\\s*\\)"								//	<sp>)
+                               "\\bCAST\\b[\\s]*\\([\\s]*"                  // CAST<sp>(<sp>		
+                               + "((" + PATTERN_String + ")|([^\\s]+))"     //	arg1				1(2,3)
+                               + "[\\s]*AS[\\s]*"                       //	<sp>AS<sp>
+                               + "(" + PATTERN_DataType + ")"               //	arg2 (datatype)		4
+                               + "\\s*\\)"                              //	<sp>)
            ;
             int gidx_arg1 = 1;
-            int gidx_arg2 = 7;	// datatype w/o length
-            // Pattern p = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
+            int gidx_arg2 = 7;  // datatype w/o length
+                                // Pattern p = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
             MatchCollection mc = Regex.Matches(sqlStatement, pattern, RegexOptions.IgnoreCase);
 
             IDictionary convertMap = GetConvertMap();
