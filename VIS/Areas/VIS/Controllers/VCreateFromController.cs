@@ -245,7 +245,7 @@ namespace VIS.Controllers
                       + "l.M_Product_ID,c.Name, l.M_AttributeSetInstance_ID, l.Line,l.C_OrderLine_ID, ins.description, uom.stdprecision, l.IsDropShip , o.C_PaymentTerm_ID , t.Name");
             }
             // JID_1287: Line number sequence to be maintained when we create lines from the reference of other documents.
-            string sqlNew = "SELECT * FROM (" + sql.ToString() + ") WHERE QUANTITY > 0 ORDER BY LINE";
+            string sqlNew = "SELECT * FROM (" + sql.ToString() + ") t WHERE QUANTITY > 0 ORDER BY LINE";
 
             return sqlNew;
         }

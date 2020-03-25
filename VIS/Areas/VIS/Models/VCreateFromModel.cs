@@ -54,7 +54,7 @@ namespace VIS.Models
                 sql.Append("INNER JOIN M_Product p ON ol.M_Product_ID = p.M_Product_ID AND p.ProductType = 'I'");
             }
 
-            sql.Append(") GROUP BY C_Order_ID,C_OrderLine_ID,QtyOrdered "
+            sql.Append(") t GROUP BY C_Order_ID,C_OrderLine_ID,QtyOrdered "
             + "HAVING QtyOrdered > SUM(nvl(Qty,0)) AND QtyOrdered > SUM(NVL(QtyInvoiced,0))) ORDER BY o.DateOrdered, o.DocumentNo");
 
             DataSet ds = DB.ExecuteDataset(sql.ToString());
