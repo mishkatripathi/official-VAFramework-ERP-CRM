@@ -962,20 +962,6 @@
   <ItemGroup>
     <Content Include="Areas\VIS\WebPages\CreateUser.aspx" />
     <Content Include="Areas\VIS\WebPages\CrystalReprotViewer.aspx" />
-    <Content Include="LibDll\DotNetOpenAuth.dll" />
-    <Content Include="LibDll\Google.Apis.Authentication.OAuth2.dll" />
-    <Content Include="LibDll\Google.Apis.Calendar.v3.dll" />
-    <Content Include="LibDll\Google.Apis.dll" />
-    <Content Include="LibDll\Google.Apis.Tasks.v1.dll" />
-    <Content Include="LibDll\Google.GData.Client.dll" />
-    <Content Include="LibDll\Google.GData.Contacts.dll" />
-    <Content Include="LibDll\Google.GData.Extensions.dll" />
-    <Content Include="LibDll\Google.GData.YouTube.dll" />
-    <Content Include="LibDll\ICSharpCode.SharpZipLib.dll" />
-    <Content Include="LibDll\IKVM.OpenJDK.ClassLibrary.dll" />
-    <Content Include="LibDll\IKVM.Runtime.dll" />
-    <Content Include="LibDll\itextsharp.dll" />
-    <Content Include="LibDll\Mail.dll" />
     <Content Include="packages.config" />
     <Content Include="Areas\VIS\Views\AccountForm\Index.cshtml" />
     <Content Include="Areas\VIS\Views\ASearch\Index.cshtml" />

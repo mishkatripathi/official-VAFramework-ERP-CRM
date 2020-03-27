@@ -49,33 +49,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>LibDll\CrystalDecisions.Shared.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetOpenAuth">
-      <HintPath>LibDll\DotNetOpenAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis">
-      <HintPath>LibDll\Google.Apis.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Authentication.OAuth2">
-      <HintPath>LibDll\Google.Apis.Authentication.OAuth2.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Calendar.v3">
-      <HintPath>LibDll\Google.Apis.Calendar.v3.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Tasks.v1">
-      <HintPath>LibDll\Google.Apis.Tasks.v1.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.GData.Client">
-      <HintPath>LibDll\Google.GData.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.GData.Contacts">
-      <HintPath>LibDll\Google.GData.Contacts.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.GData.Extensions">
-      <HintPath>LibDll\Google.GData.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.GData.YouTube">
-      <HintPath>LibDll\Google.GData.YouTube.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>LibDll\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -90,9 +63,6 @@
     <Reference Include="Interop.Excel">
       <HintPath>..\..\..\Vadvantage_dll\Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Ionic.Zip">
-      <HintPath>..\..\..\Vadvantage_dll\ViennaAdvantagWeb\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="Mail, Version=3.0.12070.1947, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

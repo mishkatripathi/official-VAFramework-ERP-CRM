@@ -385,7 +385,7 @@ namespace VIS.Controllers
                                                                                                                                                                                //+ "l.M_Product_ID,COALESCE(p.Name,c.Name), l.M_AttributeSetInstance_ID, l.Line,l.C_OrderLine_ID, ins.description "
                 + "ORDER BY l.Line";
 
-            string sqlNew = "SELECT * FROM (" + sql + ") WHERE QUANTITY > 0";
+            string sqlNew = "SELECT * FROM (" + sql + ") t WHERE QUANTITY > 0";
 
             return sqlNew;
         }
