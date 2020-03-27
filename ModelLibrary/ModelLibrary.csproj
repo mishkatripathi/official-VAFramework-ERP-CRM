@@ -43,51 +43,51 @@
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>LibDll\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>LibDll\CrystalDecisions.Shared.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\CrystalDecisions.Shared.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>LibDll\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.ClassLibrary, Version=0.38.0.2, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>LibDll\IKVM.OpenJDK.ClassLibrary.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\IKVM.OpenJDK.ClassLibrary.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.Runtime, Version=0.38.0.2, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>LibDll\IKVM.Runtime.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\IKVM.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Interop.Excel">
-      <HintPath>..\..\..\Vadvantage_dll\Interop.Excel.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Mail, Version=3.0.12070.1947, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>LibDll\Mail.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\Mail.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\hosted\VAdvantgeDll\ModelLibrary\bin\MySql.Data.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql, Version=2.2.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>LibDll\Npgsql.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="NPOI">
       <HintPath>..\..\..\..\Dlls\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess">
-      <HintPath>..\..\..\..\hosted\VAdvantgeDll\ModelLibrary\bin\Oracle.ManagedDataAccess.dll</HintPath>
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.022\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="PdfSharp">
-      <HintPath>..\..\..\..\hosted\VAdvantgeDll\ModelLibrary\bin\PdfSharp.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="SecureEngineUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SecureEngineUtility\bin\Debug\SecureEngineUtility.dll</HintPath>
+      <HintPath>..\ViennaAdvantageWeb\Dll\SecureEngineUtility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
