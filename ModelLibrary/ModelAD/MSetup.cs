@@ -132,7 +132,6 @@ namespace VAdvantage.Model
                 tInfo.Log = "Sequences NOT created";
                 //return false;
                 return tInfo;
-
             }
 
             //  Trees and Client Info
@@ -170,9 +169,9 @@ namespace VAdvantage.Model
                 return tInfo;
             }
             tInfo.OrgName = m_org.GetName();
-            m_ctx.SetContext(m_WindowNo, "AD_Org_ID", GetAD_Org_ID());
-            m_ctx.SetAD_Org_ID(GetAD_Org_ID());
-            m_stdValuesOrg = AD_Client_ID + "," + GetAD_Org_ID() + ",'Y',SysDate,0,SysDate,0";
+            m_ctx.SetContext(m_WindowNo, "AD_Org_ID", m_client.GetAD_Org_ID());
+            m_ctx.SetAD_Org_ID(m_client.GetAD_Org_ID());
+            m_stdValuesOrg = AD_Client_ID + "," + m_client.GetAD_Org_ID() + ",'Y',SysDate,0,SysDate,0";
             //  Info
             m_info.Append(Msg.Translate(m_lang, "AD_Org_ID")).Append("=").Append(name).Append("\n");
 
@@ -197,7 +196,7 @@ namespace VAdvantage.Model
                 m_info.Append(err);
                 m_trx.Rollback();
                 m_trx.Close();
-                tInfo.Log = "Admin Role A NOT inserted";
+                tInfo.Log = err;
                 //return false;
                 return tInfo;
             }
