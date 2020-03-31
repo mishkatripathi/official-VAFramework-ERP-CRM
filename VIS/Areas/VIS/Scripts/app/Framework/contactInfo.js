@@ -223,7 +223,7 @@
                         }
                         $slideraddress.empty();
                         $divContactDetails.empty();
-                        $divContactDetails.append("<p style='word-break: break-all;'> " + VIS.Msg.getMsg("ContactDetails") + " <a href='javascript:void(0)'> <img style='margin-bottom:3px' id='showAddressOnGoogleMap_" + windowNo + "' src='" + VIS.Application.contextUrl + "Areas/VIS/Images/base/ToLink20.png'> </a></p> ");
+                        $divContactDetails.append("<p style='word-break: break-all;'> " + VIS.Msg.getMsg("ContactDetails") + " <a href='javascript:void(0)'> <i id='showAddressOnGoogleMap_" + windowNo + "' class='vis vis-location'></i> </a></p> ");
                         for (var i = 0; i < result.length; i++) {
                             if (result[i].FirstName != "") {
 
@@ -255,12 +255,12 @@
                             if (result[i].PhoneNo != "" && result[i].PhoneNo != null) {
                                 isContactDetails = true;
                                 if (windowWidth <= 1024) {
-                                    $divContactDetails.append("<a href='tel:" + result[i].PhoneNo + "'><p id='phone_" + windowNo + "' style='word-break: break-all'><span class='wsp-caller'><img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/caller.png'></span>" + result[i].PhoneNo + "</p></a>");
+                                    $divContactDetails.append("<a href='tel:" + result[i].PhoneNo + "'><p id='phone_" + windowNo + "' style='word-break: break-all'><span class='wsp-caller'><i class='fa fa-phone'></i></span>" + result[i].PhoneNo + "</p></a>");
                                 }
 
                                 else {
 
-                                    $divContactDetails.append("<p id='phone_" + windowNo + "' style='word-break: break-all'><span class='wsp-caller'><img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/caller.png'></span>" + result[i].PhoneNo + "</p>");
+                                    $divContactDetails.append("<p id='phone_" + windowNo + "' style='word-break: break-all'><span class='wsp-caller'><i class='fa fa-phone'></i></span>" + result[i].PhoneNo + "</p>");
                                 }
                             }
 
@@ -268,7 +268,7 @@
                         $slideruserEmail.empty();
                         if (result[0].Email != "" && result[0].Email != null) {
                             isContactDetails = true;
-                            $divContactDetails.append("<p id='userEmail_" + windowNo + "' style='word-break: break-all;display: inline-flex;margin-top: 0;'> <span class='wsp-caller'><img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/sms.png'></span>" + result[0].Email + "</p>");
+                            $divContactDetails.append("<p id='userEmail_" + windowNo + "' style='word-break: break-all;display: inline-flex;margin-top: 0;'> <span class='wsp-caller'><i class='vis vis-email'></i></span>" + result[0].Email + "</p>");
                         }
                         if (!isContactDetails) {
 
@@ -915,7 +915,7 @@
 "<input type='hidden' value='0' id='BPGroupID_" + windowNo + "'></input>" +
 "<input type='hidden' value='' id='userTableID_" + windowNo + "'>" +
 "<p id='companyName_" + windowNo + "' class='wsp-view_profile_possession'></p>" +
-"<p class='wsp-view_profile_possession' style='border-bottom: 1px solid #DFDFDF; padding-bottom: 20px;' id='pContactTypeCategory_" + windowNo + "'></p>" +
+"<p class='wsp-view_profile_possession' style='border-bottom: 1px solid rgba(var(--v-c-secondary), 1); padding-bottom: 10px;' id='pContactTypeCategory_" + windowNo + "'></p>" +
 
 "<div class='wsp-profile_big_img_mobile'>" +
 
@@ -945,7 +945,7 @@
 
 "<div class='image-upload' style='float: right; position: absolute; z-index: 999; width: 100%'>" +
 " <label for='file-input' class='wsp-file-label'>" +
-"<span class='wsp-change-picture-ico'></span>" +
+"<i class='vis vis-pencil'></i>" +
 "</label>" +
 
 "<input type='file' id='wsp-file-input_" + windowNo + "' class='wsp-file-input' value='Add Pic' style='opacity: 0; width: 30%; margin-top: 0px; float: right; z-index: 999; position: absolute; right: 0px; cursor: pointer;'>" +
@@ -954,7 +954,7 @@
 
 "<div class='wsp-bigimg'>" +
 
-" <img id='bigUserImage_" + windowNo + "' alt='Image is not available' src='" + VIS.Application.contextUrl + "Areas/VIS/Images/home/User.png'>" +
+" <i id='bigUserImage_" + windowNo + "' class='fa fa-user'></i>" +
 "</div>" +
 "</div>" +
 
@@ -962,7 +962,7 @@
 "<table id='actionTable_" + windowNo + "' class='wsp-tableRightContent'>" +
 "<tbody><tr style='height:30px'>" +
 " <td class='tdactionlist'><a id='edit_" + windowNo + "' class='wsp-tableaction' href='javascript:void(0)'><span class='wsp-left_icon'>" +
-" <img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/edit_2.png'></span>" +
+" <i class='vis vis-edit'></i></span>" +
 " <p>Edit </p>" +
 " </a>" +
 " </td>" +
@@ -970,7 +970,7 @@
 " <td class='tdactionlist'>" +
 
 " <a id='sendSMS_" + windowNo + "' class='wsp-tableaction' href='javascript:void(0)'><span class='wsp-left_icon'>" +
-" <img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/send_sms.png'></span>" +
+" <i class='vis vis-sms'></i></span>" +
 " <p>" +
 " Send Sms" +
 " </p>" +
@@ -980,7 +980,7 @@
 
 "  <tr style='height:30px'>" +
 "       <td class='tdactionlist'><a id='email_" + windowNo + "' class='wsp-tableaction' href='javascript:void(0)'><span class='wsp-left_icon email_icon'>" +
-"           <img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/message.png'></span>" +
+"           <i class='vis vis-email'></i></span>" +
 "           <p>Email </p>" +
 "       </a>" +
 
@@ -988,7 +988,7 @@
 "       </td>" +
 
 "       <td class='tdactionlist'><a id='appointment_" + windowNo + "' class='wsp-tableaction' href='javascript:void(0)'><span class='wsp-left_icon'>" +
-"           <img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/appointment.png'></span>" +
+"           <i class='vis vis-appointment'></i></span>" +
 
 "           <p>Appointment </p>" +
 "       </a>" +
@@ -1000,13 +1000,13 @@
 "   <tr style='height:30px'>" +
 
 "       <td class='tdactionlist'><a id='activity_" + windowNo + "' class='wsp-tableaction' href='javascript:void(0)'><span class='wsp-left_icon'>" +
-"            <img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/activity.png'></span>" +
+"            <i class='vis vis-cog'></i></span>" +
 "           <p>Activity</p>" +
 "       </a>" +
 "       </td>" +
 
 "        <td class='tdactionlist'><a id='createOrder_" + windowNo + "' href='javascript:void(0)' class='wsp-tableaction'><span class='wsp-left_icon'>" +
-"           <img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/create_order.png'></span>" +
+"           <i class='vis vis-createdocument'></i></span>" +
 "           <p>Create Order</p>" +
 "       </a>" +
 
@@ -1016,14 +1016,14 @@
 
 "   <tr style='height:30px'>" +
 "       <td class='tdactionlist'><a id='BPInfo_" + windowNo + "' class='wsp-tableaction' href='javascript:void(0)'><span class='wsp-left_icon'>" +
-"           <img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/bp_info.png'></span>" +
+"           <i class='vis vis-info'></i></span>" +
 "           <p>BP Info</p>" +
 "       </a>" +
 
 "        </td>" +
 
 "        <td class='tdactionlist'><a id='addBPartner_" + windowNo + "' href='javascript:void(0)' class='wsp-tableaction'><span class='wsp-left_icon'>" +
-"           <img src='" + VIS.Application.contextUrl + "Areas/WSP/Images/addBPartner.png'></span>" +
+"           <i class='vis vis-addbp'></i></span>" +
 "           <p style=''>Add BPartner </p>" +
 "       </a>" +
 
@@ -1032,7 +1032,7 @@
 
 " <tr style='height:30px'>" +
                 "<td class='tdactionlist'><a id='History_" + windowNo + "' class='wsp-tableaction' href='javascript:void(0)'><span class='wsp-left_icon'>" +
-                    "<img src='/Areas/WSP/Images/History24.png'></span>" +
+                    "<i class='vis vis-history'></span>" +
                     "<p>"+VIS.Msg.getMsg('History')+"</p>" +
                 "</a>" +
 
