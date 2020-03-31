@@ -375,20 +375,20 @@ namespace VAdvantage.Model
                     return false;
                 }
             }
-            if (GetAD_Org_ID() == 0)
-            {
-                int context_AD_Org_ID = GetCtx().GetAD_Org_ID();
-                if (context_AD_Org_ID != 0)
-                {
-                    SetAD_Org_ID(context_AD_Org_ID);
-                    log.Warning("Changed Org to Context=" + context_AD_Org_ID);
-                }
-                else
-                {
-                    log.SaveError("Error", Msg.Translate(GetCtx(), "Org0NotAllowed"));
-                    return false;
-                }
-            }
+            //if (GetAD_Org_ID() == 0)
+            //{
+            //    int context_AD_Org_ID = GetCtx().GetAD_Org_ID();
+            //    if (context_AD_Org_ID != 0)
+            //    {
+            //        SetAD_Org_ID(context_AD_Org_ID);
+            //        log.Warning("Changed Org to Context=" + context_AD_Org_ID);
+            //    }
+            //    else
+            //    {
+            //        log.SaveError("Error", Msg.Translate(GetCtx(), "Org0NotAllowed"));
+            //        return false;
+            //    }
+            //}
 
             if ((newRecord || Is_ValueChanged("IsWMSEnabled") || Is_ValueChanged("IsDisallowNegativeInv"))
                     && IsWMSEnabled() && !IsDisallowNegativeInv())
